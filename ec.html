@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Commerce Website</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="st.css">
+</head>
+<body>
+  <!-- Header with Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">E-Shop</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Categories</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">Cart <span id="cart-count">0</span></a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search">
+        </form>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Hero Section with Carousel -->
+  <div class="container my-4">
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="sale-banner.jpg" class="d-block w-100" alt="Sale Banner">
+        </div>
+        <div class="carousel-item">
+          <img src="discount.jpg" class="d-block w-100" alt="Discounts">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+  
+  <!-- Filter and Sort Section -->
+  <div class="container my-3">
+    <div class="row">
+      <div class="col-md-4">
+        <select id="category-filter" class="form-select">
+          <option value="all">All Categories</option>
+          <option value="mens">Men's Clothing</option>
+          <option value="womens">Women's Clothing</option>
+          <option value="accessories">Accessories</option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <select id="price-sort" class="form-select">
+          <option value="default">Sort by Price</option>
+          <option value="low-high">Low to High</option>
+          <option value="high-low">High to Low</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Product Display Section -->
+  <div class="container my-5">
+    <h2 class="text-center">Featured Products</h2>
+    <div class="row" id="product-list">
+      <!-- Products will be dynamically added here -->
+    </div>
+  </div>
+  
+  <!-- Quick View Modal -->
+  <div class="modal fade" id="quickViewModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="quickViewTitle"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <img id="quickViewImage" class="img-fluid" alt="Product Image">
+          <p id="quickViewDescription"></p>
+          <p><strong>Price: $<span id="quickViewPrice"></span></strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Cart Modal -->
+  <div class="modal fade" id="cartModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Your Cart</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <ul id="cart-items" class="list-group"></ul>
+          <p><strong>Total: $<span id="cart-total">0.00</span></strong></p>
+        </div>
+       <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <a href="checkout.html" class="btn btn-primary">Proceed to Checkout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Navigation Links -->
+    <div class="footer-links">
+      <a href="https://mehedihasanrazon.godaddysites.com/?fbclid=IwY2xjawIebL9leHRuA2FlbQIxMAABHVRPugal3fzB1LGkwtopc2VvnXGDg4OSNTfuDEVbQt1pljxsv1MoEDDV9A_aem_XrFBueT84FzjMv3oZ5NfZQ">About Us</a>
+      <a href="https://mehedihasanrazon.godaddysites.com/?fbclid=IwY2xjawIebL9leHRuA2FlbQIxMAABHVRPugal3fzB1LGkwtopc2VvnXGDg4OSNTfuDEVbQt1pljxsv1MoEDDV9A_aem_XrFBueT84FzjMv3oZ5NfZQ">Contact</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+    <!-- Social Media Icons -->
+    <div class="footer-social">
+      <a href="https://www.facebook.com/mehedirazon75" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://github.com/razon-x-69" class="social-icon" aria-label="Github"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/mehdi-hasan-138ba124b/" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+</footer>
+
+  
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Custom JavaScript -->
+  <script src="sc.js"></script>
+</body>
+</html>
